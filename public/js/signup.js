@@ -1,15 +1,11 @@
 const signupFormHandler = async function (event) {
   event.preventDefault();
 
-  const usernameEl = document
-    .querySelector('#username-input-signup')
-    .value.trim();
-  const passwordEl = document
-    .querySelector('#password-input-signup')
-    .value.trim();
+  const usernameEl = document.querySelector('#username-input-signup').value.trim();
+  const passwordEl = document.querySelector('#password-input-signup').value.trim();
 
   if (passwordEl.length >= 8 && usernameEl) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         username: usernameEl,

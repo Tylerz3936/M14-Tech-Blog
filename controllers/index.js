@@ -4,7 +4,10 @@ const homeRoutes = require('./homeRoutes');
 const dbRoutes = require('./dbRoutes');
 
 
-router.use('/api', apiRoutes);
+router.use('/api', (req, res, next) => {
+  console.log('API route accessed'); 
+  next();
+}, apiRoutes);
 router.use('/', homeRoutes);
 router.use('/dashboard', dbRoutes);
 

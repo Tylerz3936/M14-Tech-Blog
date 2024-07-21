@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Post } = require('../models');
-const { withGuard } = require('../utils/auth.js');
+const { withAuth } = require('../utils/auth.js');
 
-router.get('/', withGuard, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       where: {
@@ -22,14 +22,14 @@ router.get('/', withGuard, async (req, res) => {
   }
 });
 
-router.get('/new', withGuard, (req, res) => {
+router.get('/new', withAuth, (req, res) => {
   res.render('newPost', {
     dashboard: true,
     loggedIn: req.session.logged_in,
   });
 });
 
-router.get('/edit/:id', withGuard, async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
 

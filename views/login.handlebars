@@ -1,15 +1,19 @@
-{{> header}}
-<main>
-  <form id="login-form">
+<div class="card">
+  <div class="card-header">
+    <h2>Login</h2>
+  </div>
+  <form id="login-form" class="card-body">
     <div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username">
+      <label for="username-input-login" class="form-label">Username</label>
+      <input type="text" id="username-input-login" />
     </div>
     <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password">
+      <label for="password-input-login" class="form-label">Password</label>
+      <input type="password" id="password-input-login" />
     </div>
-    <button type="submit">Login</button>
-    <button id="signup">Sign Up</button>
+    <button type="submit" id="login-btn" class="btn">Login!</button>
+    <a type="button" href="/signup">Sign up instead</a>
   </form>
-</main>
+</div>
+
+<script src="/js/login.js"></script>

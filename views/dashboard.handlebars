@@ -1,0 +1,12 @@
+{{> header}}
+<main>
+  <button id="new-post">New Post</button>
+  {{#each posts}}
+    <article>
+      <h2>{{this.title}}</h2>
+      <p>{{this.content}}</p>
+      <button class="edit-post" data-id="{{this.id}}">Edit</button>
+      <button class="delete-post" data-id="{{this.id}}">Delete</button>
+    </article>
+  {{/each}}
+</main>

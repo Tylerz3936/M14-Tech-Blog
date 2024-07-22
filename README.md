@@ -34,6 +34,7 @@ The Tech Blog is a CMS-style blog site where developers can create, edit, delete
     ```
 
 ## Deployed link
+https://m14-tech-blog.onrender.comLinks to an external site.
 
 ## Routes
 ## API Routes
